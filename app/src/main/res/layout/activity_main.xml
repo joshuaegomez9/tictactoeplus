@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/concrete_bckgnd"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <!-- board layout -->
+    <com.example.tictactoeplus.SquareLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/boardImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/board_background"
+            android:scaleType="fitXY" />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rowCount="3"
+            android:columnCount="3"
+            android:alignmentMode="alignBounds"
+            android:useDefaultMargins="false">
+
+            <ImageButton android:id="@+id/button00" style="@style/GridImageButton" />
+            <ImageButton android:id="@+id/button01" style="@style/GridImageButton" />
+            <ImageButton android:id="@+id/button02" style="@style/GridImageButton" />
+            <ImageButton android:id="@+id/button10" style="@style/GridImageButton" />
+            <ImageButton android:id="@+id/button11" style="@style/GridImageButton" />
+            <ImageButton android:id="@+id/button12" style="@style/GridImageButton" />
+            <ImageButton android:id="@+id/button20" style="@style/GridImageButton" />
+            <ImageButton android:id="@+id/button21" style="@style/GridImageButton" />
+            <ImageButton android:id="@+id/button22" style="@style/GridImageButton" />
+        </GridLayout>
+    </com.example.tictactoeplus.SquareLayout>
+
+    <!-- spacer -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1" />
+
+    <!-- bottom content (score + buttons + footer) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- score row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/x_tack"
+                android:layout_marginEnd="6dp" />
+
+            <TextView
+                android:id="@+id/xScoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="22sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="24dp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/o_tack"
+                android:layout_marginEnd="6dp" />
+
+            <TextView
+                android:id="@+id/oScoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="22sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- control buttons -->
+        <Button
+            android:id="@+id/resetScoreButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset Score"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#8B5E3C"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="24dp" />
+
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toggle Fading"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#8B5E3C"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="24dp" />
+
+        <Button
+            android:id="@+id/aiToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play vs AI"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#8B5E3C"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="24dp" />
+
+        <Button
+            android:id="@+id/aiModeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mode: NORMAL"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#8B5E3C"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="24dp" />
+
+        <!-- footer -->
+        <TextView
+            android:id="@+id/footerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tic Tac Toe Plus"
+            android:textSize="14sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</LinearLayout>
